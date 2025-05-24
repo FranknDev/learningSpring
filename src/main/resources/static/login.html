@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Elegante e Responsivo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos gerais */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+            box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura total */
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.15); /* Fundo translúcido */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+            -webkit-backdrop-filter: blur(10px); /* Compatibilidade Safari */
+            text-align: center;
+            width: 350px; /* Largura base */
+            max-width: 90%; /* Máximo de 90% da largura da tela */
+            margin: 20px; /* Adiciona margem para não colar nas bordas em telas menores */
+            box-sizing: border-box;
+        }
+
+        .login-container h2 {
+            margin-bottom: 30px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 2em;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9em;
+        }
+
+        .input-group input {
+            width: 100%; /* Agora 100% da largura do pai */
+            padding: 12px 10px;
+            border: none;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            font-size: 1em;
+            outline: none;
+            transition: all 0.3s ease;
+            box-sizing: border-box; /* Importante para o padding não estourar a largura */
+        }
+
+        .input-group input:focus {
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .links {
+            margin-top: 25px;
+            font-size: 0.9em;
+            display: flex; /* Transforma em flexbox para alinhar links */
+            justify-content: center; /* Centraliza horizontalmente */
+            flex-wrap: wrap; /* Permite que os links quebrem para a próxima linha */
+            gap: 15px; /* Espaço entre os links */
+        }
+
+        .links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            /* margin: 0 10px; */ /* Removido para usar gap */
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* --- Media Queries para Responsividade --- */
+
+        /* Para telas menores (celulares, tablets pequenos) */
+        @media (max-width: 480px) {
+            .login-container {
+                width: 95%; /* Ocupa mais largura em telas muito pequenas */
+                padding: 25px; /* Reduz o padding */
+                margin: 15px; /* Reduz a margem */
+            }
+
+            .login-container h2 {
+                font-size: 1.8em; /* Reduz o tamanho do título */
+                margin-bottom: 20px;
+            }
+
+            .input-group label {
+                font-size: 0.85em; /* Reduz o tamanho da fonte dos rótulos */
+            }
+
+            .input-group input {
+                padding: 10px 8px; /* Reduz o padding dos inputs */
+                font-size: 0.95em;
+            }
+
+            button {
+                padding: 12px; /* Reduz o padding do botão */
+                font-size: 1em;
+            }
+
+            .links {
+                flex-direction: column; /* Links em coluna em telas pequenas */
+                gap: 10px; /* Reduz o espaçamento entre eles */
+                font-size: 0.85em;
+            }
+        }
+
+        /* Para tablets (telas médias) */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .login-container {
+                width: 400px; /* Um pouco maior para tablets */
+                padding: 35px;
+            }
+
+            .login-container h2 {
+                font-size: 2.2em;
+            }
+        }
+
+        /* Para telas maiores (desktops) - já está bem ajustado */
+        /* @media (min-width: 769px) { ... } */
+
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Bem-vindo de Volta!</h2>
+        <form>
+            <div class="input-group">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Entrar</button>
+            <div class="links">
+                <a href="#">Esqueceu a senha?</a>
+                <a href="#">Criar conta</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
